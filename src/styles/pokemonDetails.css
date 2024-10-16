@@ -1,0 +1,45 @@
+.pokemon-details-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.card-div {
+  width: 70%;
+  height: 600px;
+  background-color: rgb(242, 239, 234);
+  border-radius: 10px;
+  display: flex;
+}
+
+.image_div {
+  width: 50%;
+  border-radius: 10px;
+  display: flex;
+}
+
+.details_div {
+  width: 50%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.all-details {
+  margin-left: 20px;
+}
+
+.pokemon-features {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: rgb(230, 81, 67);
+}
+
+h2 {
+  color: #5e4e29;
+}
