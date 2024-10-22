@@ -16,7 +16,7 @@ const pokemonSlice = createSlice({
     },
     setError: (state, action) => {
       state.error = action.payload;
-      state.loading = false; // Stop loading when there's an error
+      state.loading = false;
     },
   },
 });
