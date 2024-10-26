@@ -1,16 +1,7 @@
-import "./App.css";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
-import "./styles/header.css";
-import "./styles/homePage.css";
-import "./styles/pokemonDetails.css";
-import Header from "./components/Header";
-import HomePage from "./pages/HomePage";
-import PokemonDetails from "./pages/PokemonDetails";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Header } from "./components";
+import { HomePage, PokemonDetails } from "./pages";
+
 function PinterestApp() {
   return (
     <div className="App">

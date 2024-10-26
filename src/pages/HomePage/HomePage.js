@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import "./homePage.css";
+import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setPokemons, setLoading, setError } from "../slices/pokemonSlice";
+import { setPokemons, setLoading, setError } from "../../slices/pokemonSlice";
 
-const HomePage = () => {
+export const HomePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { pokemons, loading, error } = useSelector((state) => state.pokemon);
@@ -29,11 +30,15 @@ const HomePage = () => {
       console.log(pokemonData);
       dispatch(setPokemons(pokemonData));
     } catch (error) {
-      console.error("Error fetching Pokémon:", error);
-      dispatch(
-        setError("Failed to fetch Pokémon data. Please try again later.")
-      );
+      console.error("Error fetching Pokemon:", error);
+      dispatch(setError("Failed to fetch Pokemon data."));
     }
+  };
+
+  const determineSize = (index) => {
+    if (index % 3 === 0) return "large";
+    if (index % 2 === 0) return "medium";
+    return "small";
   };
 
   return (
@@ -46,13 +51,13 @@ const HomePage = () => {
           {pokemons.map((pokemon, index) => {
             return (
               <div
-                className="grid-item"
+                className={`card ${determineSize(index)}`}
                 key={index}
                 onClick={() => {
                   navigate(`/pokemon/${pokemon.name}`);
                 }}
               >
-                <h3>
+                <h3 style={{ margin: 0 }}>
                   {" "}
                   {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
                 </h3>
@@ -69,5 +74,3 @@ const HomePage = () => {
     </div>
   );
 };
-
-export default HomePage;

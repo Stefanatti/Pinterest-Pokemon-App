@@ -1,0 +1,47 @@
+.grid-container {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-auto-rows: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+}
+
+.card {
+  margin: 15px 10px;
+  padding: 0;
+  border-radius: 16px;
+  background-color: #e9e9e2;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card.small {
+  grid-row-end: span 26;
+}
+
+.card.medium {
+  grid-row-end: span 33;
+}
+
+.card.large {
+  grid-row-end: span 45;
+}
+.pokemon-img {
+  width: 90%;
+  height: 250px;
+  object-fit: cover;
+}

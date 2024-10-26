@@ -1,8 +1,9 @@
+import "./pokemonDetails.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const PokemonDetails = () => {
+export const PokemonDetails = () => {
   const { pokemonName } = useParams();
   const [pokemonData, setPokemonData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -76,5 +77,3 @@ const PokemonDetails = () => {
     </div>
   );
 };
-
-export default PokemonDetails;
